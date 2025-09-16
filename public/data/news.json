@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Yuri's Night – nasza prezentacja",
+    "date": "2025-04-12",
+    "cover": "/news/exemple/cover.jpg",
+    "description": "Pokazaliśmy postęp w projekcie łączności laserowej oraz nową platformę badawczą."
+  },
+  {
+    "title": "Pierwszy link laserowy 1 km",
+    "date": "2025-03-20",
+    "cover": "/news/exemple/cover.jpg",
+    "description": "Stabilne łącze punkt–punkt. Testy w warunkach miejskich – sukces!"
+  },
+  {
+    "title": "Rekrutacja do zespołu",
+    "date": "2025-09-01",
+    "cover": "/news/exemple/cover.jpg",
+    "description": "Szukamy osób do elektroniki, optyki i oprogramowania. Dołącz do nas!"
+  }
+]

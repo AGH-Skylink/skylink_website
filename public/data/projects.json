@@ -1,0 +1,20 @@
+[
+  {
+    "title": "LaserLink Kraków",
+    "description": "Eksperymentalna sieć łączności laserowej o niskich opóźnieniach dla łączności miejskiej.",
+    "cover": "/projects/exemple/cover.jpg",
+    "tags": ["highlight", "laser", "optics", "comms"]
+  },
+  {
+    "title": "Passive Radar Tracker",
+    "description": "System śledzenia obiektów na bazie pasywnego radaru, integracja z SDR.",
+    "cover": "/projects/exemple/cover.jpg",
+    "tags": ["radar", "sdr"]
+  },
+  {
+    "title": "LoRa Balloon Link",
+    "description": "Łącza dalekiego zasięgu dla balonów stratosferycznych. Telemetria i downlink.",
+    "cover": "/projects/exemple/cover.jpg",
+    "tags": ["lora", "balloon", "iot"]
+  }
+]

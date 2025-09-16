@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>AGH SKYLINK - we connect everything</title>
         <meta name="description" content="AGH Skylink - students scientific association. Space and Laser Communication, Microelectronics, Radar.">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css?v=2">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -84,13 +84,15 @@
                     <li><span class="big">NUMBER</span><span>distinctions</span></li>
                 </ul>
 
-                <h2 id="news">News</h2>
-                <ul class="news">
-                    <li>UZUPELNIC</li>
-                </ul>
-
                 <div id="linkedin-feed"></div>
             </aside>
+
+            <div class="news-block" id="news">
+              <h2>News</h2>
+              <ul class="news">
+                <li>UZUPELNIC</li>
+              </ul>
+            </div>
 
             </div>
         </section>
@@ -213,7 +215,69 @@
         const $$ = sel => Array.from(document.querySelectorAll(sel));
         const escapeHTML = s => (s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
         const truncate = (s, n=160) => (s && s.length>n ? s.slice(0,n) + "…" : (s||""));
-        async function getJSON(name){ const r = await fetch(`${DATA_BASE}/${name}.json`, {cache:"no-store"}); return r.json(); }
+        async function getJSON(name, options = {}) {
+          const {
+            timeout = 10000,
+            headers = {},
+            retries = 1,
+            retryDelay = 1000,       
+            signal: externalSignal,  
+          } = options;
+
+          const controller = new AbortController();
+          const signals = [controller.signal, externalSignal].filter(Boolean);
+
+          const signal = signals.length === 1 ? signals[0] : (() => {
+            signals.forEach(s => s.addEventListener('abort', () => controller.abort(), { once: true }));
+            return controller.signal;
+          })();
+
+          const url = `${DATA_BASE}/${name}.json`;
+          const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+          try {
+            const response = await fetch(url, {
+              cache: "no-store",
+              headers: {
+                'Accept': 'application/json',
+                ...headers
+              },
+              signal
+            });
+
+            if (!response.ok) {
+              const status = response.status;
+              if (status >= 500 && retries > 0) {
+                const delay = retryDelay * Math.pow(2, options._attempt || 0);
+                await new Promise(r => setTimeout(r, delay));
+                return getJSON(name, { ...options, retries: retries - 1, _attempt: (options._attempt || 0) + 1 });
+              }
+              throw new Error(`HTTP ${status} while fetching ${url}`);
+            }
+
+            return await response.json();
+
+          } catch (error) {
+            const isTimeout = error.name === 'AbortError';
+            const isNetwork = error.name === 'TypeError'; 
+            if ((isTimeout || isNetwork) && retries > 0) {
+              const delay = retryDelay * Math.pow(2, options._attempt || 0);
+              console.warn(`Retrying ${name} in ${delay}ms… (${retries} left)`);
+              await new Promise(r => setTimeout(r, delay));
+              return getJSON(name, { ...options, retries: retries - 1, _attempt: (options._attempt || 0) + 1 });
+            }
+
+            const errorMap = {
+              'AbortError': `Timeout after ${timeout}ms`,
+              'TypeError': 'Network error (fetch failed)',
+              'SyntaxError': 'Invalid JSON payload'
+            };
+            const msg = errorMap[error.name] || error.message || String(error);
+            throw new Error(`Failed to fetch ${name}.json: ${msg}`);
+          } finally {
+            clearTimeout(timeoutId);
+          }
+        }
 
         async function renderStats(){
           const stats = await getJSON("stats");

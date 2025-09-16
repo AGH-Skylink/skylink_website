@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Albert",
+    "role": "Lead, Systems",
+    "photo": "/team/exemple/photo.jpg",
+    "links": "https://linkedin.com/in/albert"
+  },
+  {
+    "name": "Dobrawa",
+    "role": "Optics & Alignment",
+    "photo": "/team/exemple/photo.jpg",
+    "links": "https://example.com/dobrawa"
+  },
+  {
+    "name": "Kapi",
+    "role": "FPGA & HDL",
+    "photo": "/team/exemple/photo.jpg",
+    "links": "https://example.com/kapi"
+  }
+]
