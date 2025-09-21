@@ -1,20 +1,65 @@
 [
   {
-    "name": "Albert",
-    "role": "Lead, Systems",
-    "photo": "/team/exemple/photo.jpg",
-    "links": "https://linkedin.com/in/albert"
+    "slug": "aleksanderKopyto",
+    "name": "Aleksander Kopyto",
+    "role": "President & Lead Electronics Engineer",
+    "email": "",
+    "links": "https://www.linkedin.com/in/aleksander-kopyto-6b0339123/",
+    "photo": "/content/team/aleksanderKopyto/photo.jpg",
+    "bio": "Aleksander gained early experience through computer repair and writing electronics articles for Circuit Digest. Over the years, he has worked as an IT technician, network administrator, and assistant technologist, handling server administration, electronics repair, and cloud services. At AGH University, he contributed to the CosmoDrill Science Club and is currently a radio engineer at AGH Space Systems, where he designs RF systems, including a 5 GHz radio beacon and an antenna tracking system. As president of the SkyLink club, he oversees projects and leads the electronics and radio communications team."
   },
   {
-    "name": "Dobrawa",
-    "role": "Optics & Alignment",
-    "photo": "/team/exemple/photo.jpg",
-    "links": "https://example.com/dobrawa"
+    "slug": "dobrawaRumszewicz",
+    "name": "Dobrawa Rumszewicz",
+    "role": "Board Member & Leader Software Engineer",
+    "email": "",
+    "links": "https://www.linkedin.com/in/dobrawa-rumszewicz/",
+    "photo": "/content/team/dobrawaRumszewicz/photo.png",
+    "bio": "Dobrawa is an Applied Computer Science student at AGH University with a passion for embedded systems and space technologies. In the SkyLink, she develops embedded software for high-altitude balloon communication and manages the club’s website and promotion. She works with C, C++, Java, Python, HTML and JavaScript, with experience in Arduino, Raspberry Pi, and LoRa systems. Her skills span both low-leveland high-leveland programming."
   },
   {
-    "name": "Kapi",
-    "role": "FPGA & HDL",
-    "photo": "/team/exemple/photo.jpg",
-    "links": "https://example.com/kapi"
+    "slug": "kacperSikora",
+    "name": "Kacper Sikora",
+    "role": "Board Member & Leader Physicist, Electrical Engineer",
+    "email": "",
+    "links": "",
+    "photo": null,
+    "bio": "Kacper is a board member of the SkyLink, combining expertise in physics and electronics. He is the project leader of the laser communication system, coordinating hardware development and testing. His role bridges scientific insight with practical engineering, pushing forward the club’s innovative optical communication research."
+  },
+  {
+    "slug": "andrzejKruk",
+    "name": "Dr. habil. Andrzej Kruk",
+    "role": "Supervisor",
+    "email": "",
+    "links": "https://www.linkedin.com/in/aleksander-kopyto-6b0339123/",
+    "photo": "/content/team/andrzejKruk/photo.jpg",
+    "bio": "Dr. Kruk is a physicist with expertise in both experimental and computational approaches. His PhD research in materials engineering focused on optimizing fuel cells through the development of ceramic protective-conductive layers, which earned multiple awards. His habilitation introduced a new class of magneto-optical materials applied in laser optics and optical circulators. As head of the Laboratory of Optical Spectroscopy and Magneto-Optics, he leads research on dielectric materials, transparent ceramics, and novel measurement methods. He has managed national and international research grants, developed new optical systems, and lectures on materials engineering, physics, optoelectronics, and programming."
+  },
+  {
+    "slug": "jakubUchacz",
+    "name": "Jakub Uchacz",
+    "role": "Member",
+    "email": "",
+    "links": "",
+    "photo": null,
+    "bio": "In proccess..."
+  },
+  {
+    "slug": "juliaBraglewicz",
+    "name": "Julia Brąglewicz",
+    "role": "Member",
+    "email": "",
+    "links": "",
+    "photo": null,
+    "bio": "In proccess..."
+  },
+  {
+    "slug": "magdalenaNowak",
+    "name": "Magdalena Nowak",
+    "role": "Member",
+    "email": "",
+    "links": "",
+    "photo": null,
+    "bio": "In proccess..."
   }
 ]

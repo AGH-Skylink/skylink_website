@@ -1,0 +1,7 @@
+title: Laser Communication System
+date:
+tags:
+status:
+links:
+---
+Our latest prototype is a laser-based free-space optical communication system. It uses OOK (On-Off Keying) modulation, where the signal is encoded by turning the laser diode on and off. By integrating the laser and light sensor with a microcontroller and using UART communication, we achieved a transmission speed of up to 37,500 baud. Initial tests confirmed the effectiveness of the solution, opening the way for the development of fast, wireless optical communication.

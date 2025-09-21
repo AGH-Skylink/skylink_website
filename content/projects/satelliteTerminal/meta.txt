@@ -1,0 +1,7 @@
+title: Satellite Terminal 8.8 GHz / 2.4 GHz
+date:
+tags:
+status:
+links:
+---
+We are working on a dual-band satellite terminal capable of operating in both the 8.8 GHz and 2.4 GHz ranges. The project aims to create a compact and efficient ground station, enabling satellite communication in various scenarios — from telemetry data transmission to long-range communication experiments. This terminal is an important step towards developing modern satellite communication technologies accessible to academic teams and research projects.

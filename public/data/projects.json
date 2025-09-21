@@ -1,20 +1,38 @@
 [
   {
-    "title": "LaserLink Kraków",
-    "description": "Eksperymentalna sieć łączności laserowej o niskich opóźnieniach dla łączności miejskiej.",
-    "cover": "/projects/exemple/cover.jpg",
-    "tags": ["highlight", "laser", "optics", "comms"]
+    "slug": "groundPenetratingRadar",
+    "title": "Ground-Penetrating Radar for Himalayan Research",
+    "date": "",
+    "tags": [],
+    "status": "",
+    "links": "",
+    "cover": null,
+    "gallery": [],
+    "description": "Our Ground-Penetrating Radar (GPR) is designed for geological research in extreme terrains such as the Himalayas. Mounted on a drone developed in collaboration with the Production Engineering and Energy Science Club at the University of Agriculture, the radar allows analysis of subsurface structures and detection of soil layers. The project won 3rd place at the URK Scientific Societies Session, highlighting its innovation and potential for field applications. Importantly, the radar was successfully deployed during a research expedition in the Himalayas, where it proved its effectiveness and delivered valuable scientific results.",
+    "path": "/content/projects/groundPenetratingRadar/"
   },
   {
-    "title": "Passive Radar Tracker",
-    "description": "System śledzenia obiektów na bazie pasywnego radaru, integracja z SDR.",
-    "cover": "/projects/exemple/cover.jpg",
-    "tags": ["radar", "sdr"]
+    "slug": "laserCommunicationSystem",
+    "title": "Laser Communication System",
+    "date": "",
+    "tags": [],
+    "status": "",
+    "links": "",
+    "cover": null,
+    "gallery": [],
+    "description": "Our latest prototype is a laser-based free-space optical communication system. It uses OOK (On-Off Keying) modulation, where the signal is encoded by turning the laser diode on and off. By integrating the laser and light sensor with a microcontroller and using UART communication, we achieved a transmission speed of up to 37,500 baud. Initial tests confirmed the effectiveness of the solution, opening the way for the development of fast, wireless optical communication.",
+    "path": "/content/projects/laserCommunicationSystem/"
   },
   {
-    "title": "LoRa Balloon Link",
-    "description": "Łącza dalekiego zasięgu dla balonów stratosferycznych. Telemetria i downlink.",
-    "cover": "/projects/exemple/cover.jpg",
-    "tags": ["lora", "balloon", "iot"]
+    "slug": "satelliteTerminal",
+    "title": "Satellite Terminal 8.8 GHz / 2.4 GHz",
+    "date": "",
+    "tags": [],
+    "status": "",
+    "links": "",
+    "cover": null,
+    "gallery": [],
+    "description": "We are working on a dual-band satellite terminal capable of operating in both the 8.8 GHz and 2.4 GHz ranges. The project aims to create a compact and efficient ground station, enabling satellite communication in various scenarios — from telemetry data transmission to long-range communication experiments. This terminal is an important step towards developing modern satellite communication technologies accessible to academic teams and research projects.",
+    "path": "/content/projects/satelliteTerminal/"
   }
 ]

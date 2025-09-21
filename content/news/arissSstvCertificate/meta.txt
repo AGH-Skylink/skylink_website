@@ -1,0 +1,5 @@
+title: ARISS SSTV Certificate
+date: 2025-07-25
+author:
+---
+The AGH Skylink team successfully received SSTV transmissions from the International Space Station (ISS) and was awarded an official certificate by ARISS (Amateur Radio on the International Space Station). The broadcast commemorated the 50th anniversary of the Apollo-Soyuz mission and the 40th anniversary of the first two-way SSTV communication during the STS-51F mission. The images were transmitted from the Russian segment of the ISS using an amateur radio system. We thank the ARISS organizers and mentors for this unique opportunity.

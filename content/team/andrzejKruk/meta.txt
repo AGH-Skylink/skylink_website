@@ -1,0 +1,6 @@
+name: Dr. habil. Andrzej Kruk
+role: Supervisor
+email: 
+links: https://www.linkedin.com/in/aleksander-kopyto-6b0339123/
+---
+Dr. Kruk is a physicist with expertise in both experimental and computational approaches. His PhD research in materials engineering focused on optimizing fuel cells through the development of ceramic protective-conductive layers, which earned multiple awards. His habilitation introduced a new class of magneto-optical materials applied in laser optics and optical circulators. As head of the Laboratory of Optical Spectroscopy and Magneto-Optics, he leads research on dielectric materials, transparent ceramics, and novel measurement methods. He has managed national and international research grants, developed new optical systems, and lectures on materials engineering, physics, optoelectronics, and programming.

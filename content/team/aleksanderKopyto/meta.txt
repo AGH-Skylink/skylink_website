@@ -1,0 +1,6 @@
+name: Aleksander Kopyto
+role: President & Lead Electronics Engineer
+email: 
+links: https://www.linkedin.com/in/aleksander-kopyto-6b0339123/
+---
+Aleksander gained early experience through computer repair and writing electronics articles for Circuit Digest. Over the years, he has worked as an IT technician, network administrator, and assistant technologist, handling server administration, electronics repair, and cloud services. At AGH University, he contributed to the CosmoDrill Science Club and is currently a radio engineer at AGH Space Systems, where he designs RF systems, including a 5 GHz radio beacon and an antenna tracking system. As president of the SkyLink club, he oversees projects and leads the electronics and radio communications team.

@@ -1,5 +1,6 @@
 {
-  "team_members": 14,
-  "projects_total": 7,
-  "distinctions": 3
+  "projects_total": 3,
+  "cities_connected": 3,
+  "team_members": "~30",
+  "avg_link_latency_ms": 2.8
 }

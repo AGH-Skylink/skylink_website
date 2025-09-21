@@ -1,0 +1,5 @@
+title: Event with astronaut Sławosz Uznański-Wiśniewski
+date: 2025-07-22
+author: 
+---
+AGH Skylink was invited to a special communication event with astronaut Sławosz Uznański-Wiśniewski at the Copernicus Science Centre. Our team was represented by Magdalena Nowak, 민병준, and Olek Kopyto. We conducted workshops on how CB radios work, where visitors could see their voices visualized on an oscilloscope—before and after being transformed into a radio wave. Guests also learned the basics of electronic measurements, SDR receivers, and radio modulation techniques. The youngest participants had a blast, but curious adults joined in as well!

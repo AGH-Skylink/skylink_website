@@ -7,6 +7,7 @@
         <title>AGH SKYLINK - we connect everything</title>
         <meta name="description" content="AGH Skylink - students scientific association. Space and Laser Communication, Microelectronics, Radar.">
         <link rel="stylesheet" href="style.css?v=2">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -60,17 +61,23 @@
                 <h2>What we do?</h2>
                 <ul class="feature-grid">
                     <li class="card">
-                        <span class="icon"></span>
+                        <span class="material-icons">
+                          satellite_alt
+                          </span>
                         <h3>Space and Laser Communication</h3>
                         <p>DESCRIPTON</p>
                     </li>
                     <li class="card">
-                        <span class="icon"></span>
+                        <span class="material-icons">
+                          electric_bolt
+                          </span>
                         <h3>Microelectronics</h3>
                         <p>DESCRIPTON</p>
                     </li>
                     <li class="card">
-                        <span class="icon"></span>
+                        <span class="material-icons">
+                          radar
+                          </span>
                         <h3>Radar</h3>
                         <p>DESCRIPTON</p>
                     </li>
@@ -105,7 +112,6 @@
                     <div class="project-body">
                         <h3>PROJECT ONE</h3>
                         <p>DESCRIPTON</p>
-                        <a class="btn ghost" href="#projects">Read more</a>
                     </div>
                 </article>
             </div>
@@ -133,9 +139,6 @@
                         <p>DESCRIPTION</p>
                     </li>
                 </ul>
-                <div class="center">
-                    <a class="btn ghost" href="#projects">All projects</a>
-                </div>
             </div>
         </section>
 
@@ -172,15 +175,15 @@
           <div>
             <h2>Partners</h2>
             <ul class="logos">
-              <li class="logo">LOGO</li>
-              <li class="logo">LOGO</li>
-              <li class="logo">LOGO</li>
+              <li class="logo">
+                <img src="./img/logo.png" alt="Logo">
+              </li>
             </ul>
           </div>
           <div class="card join" id="join">
             <h2>Join us</h2>
-            <p id="recruit">Recruit open, we are looking for electronicians</p>
-            <a class="btn primary" href="#contact">Apply</a>
+            <p id="recruit">Recruit open</p>
+            <a class="btn primary" href="https://forms.office.com/r/MKcszRw5tV">Apply</a>
           </div>
         </div>
       </section>
@@ -209,12 +212,82 @@
 
       <script type="module">
         const DATA_BASE = "./public/data";     
-        const CONTENT_BASE = "./content";      
+        const CONTENT_BASE = "/content";     
+        
+          const resolveContent = p => {
+          if (!p) return "";
+          if (/^https?:\/\//.test(p)) return p;
+          if (p.startsWith("/")) return p;       
+          return `${CONTENT_BASE}/${p}`.replace(/\/{2,}/g, "/");
+        };
 
         const $ = sel => document.querySelector(sel);
         const $$ = sel => Array.from(document.querySelectorAll(sel));
         const escapeHTML = s => (s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
         const truncate = (s, n=160) => (s && s.length>n ? s.slice(0,n) + "…" : (s||""));
+        
+        function renderExpandable(escapedText, limit = 160, moreLabel = "Show more", lessLabel = "Show less") {
+          if (!escapedText) return "";
+          if (escapedText.length <= limit) return escapedText; 
+
+          const shortPart = escapedText.slice(0, limit);
+          const restPart  = escapedText.slice(limit);
+
+          return `
+            <span class="exp-text" data-collapsed="true">
+              <span class="exp-short">${shortPart}</span><span class="exp-ellipsis">…</span>
+              <span class="exp-rest" hidden>${restPart}</span>
+              <button class="exp-toggle btn" type="button" aria-expanded="false" data-more="${moreLabel}" data-less="${lessLabel}">
+                ${moreLabel}
+              </button>
+            </span>
+          `;
+        }
+
+        document.addEventListener("click", (e) => {
+          const btn = e.target.closest(".exp-toggle");
+          if (!btn) return;
+
+          const wrapper = btn.closest(".exp-text");
+          const collapsed = wrapper.getAttribute("data-collapsed") === "true";
+          const rest = wrapper.querySelector(".exp-rest");
+          const ellipsis = wrapper.querySelector(".exp-ellipsis");
+
+          const para = btn.closest("p");
+
+          if (collapsed) {
+              rest.hidden = false;
+              ellipsis.hidden = true;
+              wrapper.setAttribute("data-collapsed", "false");
+              btn.setAttribute("aria-expanded", "true");
+              btn.textContent = btn.dataset.less || "Show less";
+
+              if (para) {
+                para.style.webkitLineClamp = "unset";
+                para.style.display = "block";
+                para.style.overflow = "visible";
+                para.style.maxHeight = "none";
+                para.style.maskImage = "none";
+                para.style.WebkitMaskImage = "none";
+              }
+            } else {
+              rest.hidden = true;
+              ellipsis.hidden = false;
+              wrapper.setAttribute("data-collapsed", "true");
+              btn.setAttribute("aria-expanded", "false");
+              btn.textContent = btn.dataset.more || "Show more";
+
+              if (para) {
+                para.style.webkitLineClamp = "";
+                para.style.display = "";
+                para.style.overflow = "";
+                para.style.maxHeight = "";
+                para.style.maskImage = "";
+                para.style.WebkitMaskImage = "";
+              }
+            }
+          });
+
         async function getJSON(name, options = {}) {
           const {
             timeout = 10000,
@@ -299,13 +372,13 @@
           const list = await getJSON("news");
           const ul = document.querySelector("ul.news");
           if(!ul) return;
-          const items = list.slice(0,3).map(n => `
+          const items = list.slice(0,6).map(n => `
             <li class="news-item">
-              ${n.cover ? `<img class="news-thumb" src="${CONTENT_BASE}${n.cover}" alt="${escapeHTML(n.title)}">` : ""}
+              ${n.cover ? `<img class="news-thumb" src="${resolveContent(n.cover)}" alt="${escapeHTML(n.title)}">` : ""}
               <div>
                 <strong>${escapeHTML(n.title)}</strong><br>
                 <small>${n.date ? new Date(n.date).toLocaleDateString() : ""}</small>
-                <p>${truncate(escapeHTML(n.description), 120)}</p>
+                <p>${renderExpandable(escapeHTML(n.description), 120)}</p>
               </div>
             </li>
           `).join("");
@@ -319,10 +392,10 @@
           const items = list.slice(0, 9).map(p => `
             <li class="card proj">
               <div class="thumb">
-                ${p.cover ? `<img src="${CONTENT_BASE}${p.cover}" alt="${escapeHTML(p.title)}">` : ""}
+                ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title)}">` : ""}
               </div>
               <h3>${escapeHTML(p.title)}</h3>
-              <p>${truncate(escapeHTML(p.description), 150)}</p>
+              <p>${renderExpandable(escapeHTML(p.description), 150)}</p>
             </li>
           `).join("");
           ul.innerHTML = items;
@@ -333,9 +406,9 @@
           const pick = list.find(p => (p.tags||[]).some(t => t.toLowerCase()==="highlight")) || list[0];
           const art = document.querySelector(".section.highlight article.card.project");
           if(!art || !pick) return;
-          art.querySelector(".thumb").innerHTML = pick.cover ? `<img src="${CONTENT_BASE}${pick.cover}" alt="${escapeHTML(pick.title)}">` : "";
+          art.querySelector(".thumb").innerHTML = pick.cover ? `<img src="${resolveContent(pick.cover)}" alt="${escapeHTML(pick.title)}">` : "";
           art.querySelector(".project-body h3").textContent = pick.title;
-          art.querySelector(".project-body p").textContent = truncate(pick.description, 220);
+          art.querySelector(".project-body p").innerHTML = renderExpandable(escapeHTML(pick.description), 220);
         }
 
         async function renderTeam(){
@@ -344,9 +417,12 @@
           if(!ul) return;
           const items = list.slice(0, 8).map(t => `
             <li class="card person">
-              <div class="avatar">${t.photo ? `<img src="${CONTENT_BASE}${t.photo}" alt="${escapeHTML(t.name)}">` : ""}</div>
+              <div class="avatar">
+                ${t.photo ? `<img src="${resolveContent(t.photo)}" alt="${escapeHTML(t.name)}">` : ""}
+              </div>
               <h3>${escapeHTML(t.name)}</h3>
               <p><em>${escapeHTML(t.role)}</em></p>
+              ${t.bio ? `<p class="bio">${renderExpandable(escapeHTML(t.bio), 180)}</p>` : ""}
               ${t.links ? `<p><a class="chip" href="${t.links}" target="_blank" rel="noopener">Profile</a></p>` : ""}
             </li>
           `).join("");

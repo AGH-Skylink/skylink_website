@@ -1,0 +1,7 @@
+title: Ground-Penetrating Radar for Himalayan Research
+date:
+tags:
+status:
+links:
+---
+Our Ground-Penetrating Radar (GPR) is designed for geological research in extreme terrains such as the Himalayas. Mounted on a drone developed in collaboration with the Production Engineering and Energy Science Club at the University of Agriculture, the radar allows analysis of subsurface structures and detection of soil layers. The project won 3rd place at the URK Scientific Societies Session, highlighting its innovation and potential for field applications. Importantly, the radar was successfully deployed during a research expedition in the Himalayas, where it proved its effectiveness and delivered valuable scientific results.

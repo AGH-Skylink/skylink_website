@@ -15,18 +15,30 @@ async function ensureDir(dir) {
 }
 
 function parseMetaTxt(txt) {
-  const [headRaw, ...rest] = txt.split(/\n---\n/);
+  const norm = txt.replace(/\r\n/g, "\n");
+  const [headRaw, ...rest] = norm.split(/\n---\n/);
   const head = {};
-  for (const line of headRaw.split(/\r?\n/)) {
+
+  for (const line of headRaw.split(/\n/)) {
     if (!line.trim()) continue;
     const idx = line.indexOf(":");
     if (idx === -1) continue;
-    const key = line.slice(0, idx).trim();
+    const key = line.slice(0, idx).trim().toLowerCase(); 
     const value = line.slice(idx + 1).trim();
     head[key] = value;
   }
+
   const body = rest.length ? rest.join("\n---\n").trim() : "";
-  return { ...head, description: body };
+  const out = { ...head };
+
+  if (body) {
+    out.description = body;
+  } else {
+    if (head.description) out.description = head.description;
+    if (head.bio) out.bio = head.bio;
+  }
+
+  return out;
 }
 
 async function readDirIfExists(dir) {
@@ -183,9 +195,10 @@ async function collectTeam() {
   }
 
     const rolePriority = {
+    Supervisor: 4,
     president: 3,
-    leader: 2,
-    head: 1
+    board: 2,
+    leader: 1
     };
 
     out.sort((a, b) => {

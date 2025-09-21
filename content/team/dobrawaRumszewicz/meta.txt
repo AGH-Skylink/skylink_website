@@ -1,0 +1,6 @@
+name: Dobrawa Rumszewicz
+role: Board Member & Leader Software Engineer
+email: 
+links: https://www.linkedin.com/in/dobrawa-rumszewicz/
+---
+Dobrawa is an Applied Computer Science student at AGH University with a passion for embedded systems and space technologies. In the SkyLink, she develops embedded software for high-altitude balloon communication and manages the club’s website and promotion. She works with C, C++, Java, Python, HTML and JavaScript, with experience in Arduino, Raspberry Pi, and LoRa systems. Her skills span both low-leveland high-leveland programming.

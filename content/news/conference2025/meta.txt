@@ -1,0 +1,10 @@
+title: Space Resources Conference 2025
+date: 2025-05-24
+author: 
+---
+We’ve just wrapped up an inspiring experience at the Space Resources Conference (May 21–23), where we presented our project posters and connected with experts from around the world! A highlight of the event was meeting Bernard Foing, former Chief Scientist of ESA, who praised our ideas and congratulated us on the direction our student group is taking.
+Poster authors:
+- Krzysztof Rosiński, Michał Mikołajczyk, Kacper Sikora – Free Space Optical Laser Transceiver
+- Aleksander Kopyto, Sylwester Ślusarczyk, Jakub Uchacz – Development of a Ground Penetrating Radar for a Himalayan Survey Mission
+- Kacper Wojtowicz – Chronaflow: an app for subjective time perception research in Analog Astronaut Missions
+AGH SKYLINK is gaining momentum – and this is just the beginning of our cosmic journey! 🌌
