@@ -195,7 +195,7 @@ async function collectTeam() {
   }
 
     const rolePriority = {
-    Supervisor: 4,
+    supervisor: 4,
     president: 3,
     board: 2,
     leader: 1

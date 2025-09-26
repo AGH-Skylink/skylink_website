@@ -1,5 +1,14 @@
 [
   {
+    "slug": "andrzejKruk",
+    "name": "Dr. habil. Andrzej Kruk",
+    "role": "Supervisor",
+    "email": "",
+    "links": "https://www.linkedin.com/in/aleksander-kopyto-6b0339123/",
+    "photo": "/content/team/andrzejKruk/photo.jpg",
+    "bio": "Dr. Kruk is a physicist with expertise in both experimental and computational approaches. His PhD research in materials engineering focused on optimizing fuel cells through the development of ceramic protective-conductive layers, which earned multiple awards. His habilitation introduced a new class of magneto-optical materials applied in laser optics and optical circulators. As head of the Laboratory of Optical Spectroscopy and Magneto-Optics, he leads research on dielectric materials, transparent ceramics, and novel measurement methods. He has managed national and international research grants, developed new optical systems, and lectures on materials engineering, physics, optoelectronics, and programming."
+  },
+  {
     "slug": "aleksanderKopyto",
     "name": "Aleksander Kopyto",
     "role": "President & Lead Electronics Engineer",
@@ -25,15 +34,6 @@
     "links": "",
     "photo": null,
     "bio": "Kacper is a board member of the SkyLink, combining expertise in physics and electronics. He is the project leader of the laser communication system, coordinating hardware development and testing. His role bridges scientific insight with practical engineering, pushing forward the club’s innovative optical communication research."
-  },
-  {
-    "slug": "andrzejKruk",
-    "name": "Dr. habil. Andrzej Kruk",
-    "role": "Supervisor",
-    "email": "",
-    "links": "https://www.linkedin.com/in/aleksander-kopyto-6b0339123/",
-    "photo": "/content/team/andrzejKruk/photo.jpg",
-    "bio": "Dr. Kruk is a physicist with expertise in both experimental and computational approaches. His PhD research in materials engineering focused on optimizing fuel cells through the development of ceramic protective-conductive layers, which earned multiple awards. His habilitation introduced a new class of magneto-optical materials applied in laser optics and optical circulators. As head of the Laboratory of Optical Spectroscopy and Magneto-Optics, he leads research on dielectric materials, transparent ceramics, and novel measurement methods. He has managed national and international research grants, developed new optical systems, and lectures on materials engineering, physics, optoelectronics, and programming."
   },
   {
     "slug": "jakubUchacz",

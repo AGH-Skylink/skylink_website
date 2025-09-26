@@ -4,7 +4,7 @@
     "title": "Ground-Penetrating Radar for Himalayan Research",
     "date": "",
     "tags": [],
-    "status": "",
+    "status": "completed",
     "links": "",
     "cover": null,
     "gallery": [],
@@ -15,8 +15,10 @@
     "slug": "laserCommunicationSystem",
     "title": "Laser Communication System",
     "date": "",
-    "tags": [],
-    "status": "",
+    "tags": [
+      "highlight"
+    ],
+    "status": "completed",
     "links": "",
     "cover": null,
     "gallery": [],
@@ -28,11 +30,23 @@
     "title": "Satellite Terminal 8.8 GHz / 2.4 GHz",
     "date": "",
     "tags": [],
-    "status": "",
+    "status": "in development",
     "links": "",
-    "cover": null,
+    "cover": "/content/projects/satelliteTerminal/cover.jpg",
     "gallery": [],
     "description": "We are working on a dual-band satellite terminal capable of operating in both the 8.8 GHz and 2.4 GHz ranges. The project aims to create a compact and efficient ground station, enabling satellite communication in various scenarios — from telemetry data transmission to long-range communication experiments. This terminal is an important step towards developing modern satellite communication technologies accessible to academic teams and research projects.",
     "path": "/content/projects/satelliteTerminal/"
+  },
+  {
+    "slug": "stratoLink",
+    "title": "StratoLink – High-Altitude Balloon Communication Platform",
+    "date": "",
+    "tags": [],
+    "status": "in development",
+    "links": "https://github.com/AGH-Skylink/StratoLink",
+    "cover": null,
+    "gallery": [],
+    "description": "A modular communication platform for stratospheric missions. StratoLink focuses on reliable long-range telemetry and data links between a high-altitude balloon payload and a ground station, with an emphasis on robustness and extensibility.",
+    "path": "/content/projects/stratoLink/"
   }
 ]

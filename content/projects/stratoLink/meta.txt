@@ -1,0 +1,7 @@
+title: StratoLink – High-Altitude Balloon Communication Platform
+date:
+tags:
+status: in development
+links: https://github.com/AGH-Skylink/StratoLink
+---
+A modular communication platform for stratospheric missions. StratoLink focuses on reliable long-range telemetry and data links between a high-altitude balloon payload and a ground station, with an emphasis on robustness and extensibility.

@@ -11,7 +11,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
     </head>
 
     <body>
@@ -65,21 +64,21 @@
                           satellite_alt
                           </span>
                         <h3>Space and Laser Communication</h3>
-                        <p>DESCRIPTON</p>
+                        <p>We design and test advanced satellite and free-space optical communication systems — from dual-band ground terminals to high-speed laser links enabling reliable data transfer in extreme conditions.</p>
                     </li>
                     <li class="card">
                         <span class="material-icons">
                           electric_bolt
                           </span>
                         <h3>Microelectronics</h3>
-                        <p>DESCRIPTON</p>
+                        <p>Our team develops custom electronic circuits, embedded software, and RF systems that power our communication, control, and measurement solutions for space and scientific missions.</p>
                     </li>
                     <li class="card">
                         <span class="material-icons">
                           radar
                           </span>
                         <h3>Radar</h3>
-                        <p>DESCRIPTON</p>
+                        <p>We build innovative radar systems, including a drone-mounted ground-penetrating radar tested in the Himalayas, capable of subsurface imaging and exploration in challenging environments.</p>
                     </li>
                 </ul>
 
@@ -389,15 +388,38 @@
           const list = await getJSON("projects");
           const ul = document.querySelector(".section.projects ul.cards");
           if(!ul) return;
-          const items = list.slice(0, 9).map(p => `
-            <li class="card proj">
-              <div class="thumb">
-                ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title)}">` : ""}
-              </div>
-              <h3>${escapeHTML(p.title)}</h3>
-              <p>${renderExpandable(escapeHTML(p.description), 150)}</p>
-            </li>
-          `).join("");
+
+          const items = list.slice(0, 9).map(p => {
+            const statusSlug = (p.status || "").toLowerCase().replace(/\s+/g,"-");
+            const statusBadge = p.status
+              ? `<span class="status ${statusSlug}">${escapeHTML(p.status)}</span>`
+              : "";
+
+            const linkArr = (p.links || "").split(/\s*,\s*/).filter(Boolean);
+            const linksHTML = linkArr.length
+              ? `<p class="proj-links">` +
+                  linkArr.map((url,i) => {
+                    const label = /github\.com/i.test(url) ? "GitHub" : `Link ${i+1}`;
+                    return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+                  }).join(" ") +
+                `</p>`
+              : "";
+
+            return `
+              <li class="card proj">
+                <div class="thumb">
+                  ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title)}">` : ""}
+                </div>
+                <div class="proj-head">
+                  <h3>${escapeHTML(p.title)}</h3>
+                  ${statusBadge}
+                </div>
+                <p>${renderExpandable(escapeHTML(p.description), 150)}</p>
+                ${linksHTML}
+              </li>
+            `;
+          }).join("");
+
           ul.innerHTML = items;
         }
 
@@ -428,6 +450,43 @@
           `).join("");
           ul.innerHTML = items;
         }
+        
+        function enhanceFeatureCards(limit = 140) {
+          $$(".section.features .card p").forEach(p => {
+            const txt = (p.textContent || "").trim();
+            p.innerHTML = renderExpandable(escapeHTML(txt), limit);
+          });
+        }
+
+        function setupLightbox(){
+          const box  = document.getElementById("lightbox");
+          const img  = box.querySelector("img");
+          const btn  = box.querySelector(".lightbox-close");
+
+          const open = (src, alt="") => {
+            img.src = src; img.alt = alt;
+            box.setAttribute("aria-hidden","false");
+            document.body.style.overflow = "hidden"; 
+          };
+          const close = () => {
+            box.setAttribute("aria-hidden","true");
+            img.src = ""; img.alt = "";
+            document.body.style.overflow = "";
+          };
+
+          document.addEventListener("click", (e) => {
+            const t = e.target;
+            if (t.matches(".news-thumb, .section.projects .thumb img, .section.highlight .thumb img")) {
+              open(t.currentSrc || t.src, t.alt || "");
+              return;
+            }
+            if (t === box || t === btn) close();
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && box.getAttribute("aria-hidden") === "false") close();
+          });
+        }
 
         (async function init(){
           try{
@@ -436,14 +495,20 @@
               renderNews(),
               renderProjects(),
               renderHighlighted(),
-              renderTeam()
+              renderTeam(120)
             ]);
+            enhanceFeatureCards(90);
+            setupLightbox(); 
           }catch(e){
             console.error("Render error:", e);
           }
         })();
       </script>
 
+      <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+        <img alt="" />
+        <button class="lightbox-close" aria-label="Close">×</button>
+      </div>
 
     </body>
 

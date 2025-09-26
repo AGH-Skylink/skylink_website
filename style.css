@@ -380,3 +380,98 @@ h3{font-size:18px;font-weight:700}
 @media (max-width: 860px){
   .features .news{ grid-template-columns: 1fr; }
 }
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  padding:.28rem .62rem;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  line-height:1;
+  border:1px solid transparent;
+  user-select:none;
+  white-space:nowrap;
+}
+
+.status.completed,
+.status.finished{
+  --bg:  #eaf7ef;  
+  --bd:  #bfe9cf;   
+  --fg:  #0a6b35;  
+  background: var(--bg);
+  border-color: var(--bd);
+  color: var(--fg);
+}
+.status.completed::before,
+.status.finished::before{
+  content:"✔";
+  font-weight:900;
+}
+
+.status.in-development,
+.status.prototype{
+  --bg:  #eaf2ff;
+  --bd:  #c9ddff;
+  --fg:  #1b5fd6;
+  background: var(--bg);
+  border-color: var(--bd);
+  color: var(--fg);
+}
+.status.in-development::before,
+.status.prototype::before{
+  content:"⏳";
+  font-weight:900;
+}
+
+
+@media (prefers-color-scheme: dark){
+  .status.completed,.status.finished{
+    --bg:#103a25; --bd:#1b5a39; --fg:#88f0b8;
+  }
+  .status.in-development,.status.prototype{
+    --bg:#0e2547; --bd:#1a3a6b; --fg:#8fc0ff;
+  }
+}
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;             
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0,0,0,.85);
+  z-index: 9999;
+}
+.lightbox[aria-hidden="false"]{ display: flex; }
+
+.lightbox img{
+  max-width: min(92vw, 1400px);
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.55);
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 14px; right: 14px;
+  border: 0;
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.lightbox-close:hover{ background: rgba(255,255,255,.22); }
+
+.news-thumb, .section.projects .thumb img, .section.highlight .thumb img{
+  cursor: zoom-in;
+}
