@@ -1,5 +1,14 @@
 [
   {
+    "slug": "firstFrames",
+    "title": "First Frames from Our Satellite Ground Station!",
+    "date": "2025-10-03",
+    "author": "",
+    "cover": "/content/news/firstFrames/cover.png",
+    "description": "Our ground station, operating within the TinyGS network, has successfully received its first frames from the Tianqi-16 satellite 🚀.\nCurrently, it is capable of receiving LoRa transmissions in the 433 MHz band, as well as signals from stratospheric balloons, including projects such as WTK and AATC.\nGreat work on the antenna and project idea by Jakub Uchacz and Magdalena Nowak🙌",
+    "path": "/content/news/firstFrames/"
+  },
+  {
     "slug": "himalayas",
     "title": "SkyLink in the Himalayas!",
     "date": "2025-08-14",

@@ -1,0 +1,7 @@
+title: First Frames from Our Satellite Ground Station!
+date: 2025-10-03
+author: 
+---
+Our ground station, operating within the TinyGS network, has successfully received its first frames from the Tianqi-16 satellite 🚀.
+Currently, it is capable of receiving LoRa transmissions in the 433 MHz band, as well as signals from stratospheric balloons, including projects such as WTK and AATC.
+Great work on the antenna and project idea by Jakub Uchacz and Magdalena Nowak🙌
