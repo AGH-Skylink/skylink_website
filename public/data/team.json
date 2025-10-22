@@ -1,12 +1,12 @@
 [
   {
     "slug": "andrzejKruk",
-    "name": "Dr. habil. Andrzej Kruk",
+    "name": "Dr. hab. Andrzej Kruk",
     "role": "Supervisor",
     "email": "",
     "links": "https://www.linkedin.com/in/aleksander-kopyto-6b0339123/",
     "photo": "/content/team/andrzejKruk/photo.jpg",
-    "bio": "Dr. Kruk is a physicist with expertise in both experimental and computational approaches. His PhD research in materials engineering focused on optimizing fuel cells through the development of ceramic protective-conductive layers, which earned multiple awards. His habilitation introduced a new class of magneto-optical materials applied in laser optics and optical circulators. As head of the Laboratory of Optical Spectroscopy and Magneto-Optics, he leads research on dielectric materials, transparent ceramics, and novel measurement methods. He has managed national and international research grants, developed new optical systems, and lectures on materials engineering, physics, optoelectronics, and programming."
+    "bio": "Professor Kruk is a physicist with expertise in both experimental and computational approaches. His PhD research in materials engineering focused on optimizing fuel cells through the development of ceramic protective-conductive layers, which earned multiple awards. His habilitation introduced a new class of magneto-optical materials applied in laser optics and optical circulators. As head of the Laboratory of Optical Spectroscopy and Magneto-Optics, he leads research on dielectric materials, transparent ceramics, and novel measurement methods. He has managed national and international research grants, developed new optical systems, and lectures on materials engineering, physics, optoelectronics, and programming."
   },
   {
     "slug": "aleksanderKopyto",
@@ -58,8 +58,8 @@
     "name": "Magdalena Nowak",
     "role": "Member",
     "email": "",
-    "links": "",
-    "photo": null,
-    "bio": "In proccess..."
+    "links": "https://www.linkedin.com/in/magdalena-nowak-a91230256/",
+    "photo": "/content/team/magdalenaNowak/photo.png",
+    "bio": "Magdalena is a Space and Satellite Engineering student at the Military University of Technology, focusing on radio communication, satellite technologies, and radio astronomy. She has completed MATLAB courses in signal analysis and machine learning, gained experience with basic antenna calculations in the Innspace Team, and carried out a stratospheric mission with the Cubes In Space Foundation. At AGH Skylink, she develops her skills in electronics and communication systems applied to space research, like TinyGS."
   }
 ]

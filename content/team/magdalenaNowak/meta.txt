@@ -1,6 +1,6 @@
 name: Magdalena Nowak
 role: Member
 email: 
-links: 
+links: https://www.linkedin.com/in/magdalena-nowak-a91230256/
 ---
-In proccess...
+Magdalena is a Space and Satellite Engineering student at the Military University of Technology, focusing on radio communication, satellite technologies, and radio astronomy. She has completed MATLAB courses in signal analysis and machine learning, gained experience with basic antenna calculations in the Innspace Team, and carried out a stratospheric mission with the Cubes In Space Foundation. At AGH Skylink, she develops her skills in electronics and communication systems applied to space research, like TinyGS.
