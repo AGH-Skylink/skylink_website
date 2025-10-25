@@ -91,9 +91,11 @@ h3{font-size:18px;font-weight:700}
 }
 .hero:before{
   content:"";position:absolute;inset:0;z-index:0;
+  inset: -12vw;
   background:
-    radial-gradient(1200px 600px at 80% 20%, rgba(78,168,222,.18),transparent 60%),
-    radial-gradient(1000px 600px at 20% 80%, rgba(24,196,161,.12),transparent 60%);
+    radial-gradient(closest-corner at 85% 25%, rgba(78,168,222,.18), transparent 70%),
+    radial-gradient(closest-corner at 20% 85%, rgba(24,196,161,.12), transparent 65%);
+  background-repeat: no-repeat;
 }
 .hero::after {
   content: "";
