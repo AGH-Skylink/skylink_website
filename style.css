@@ -391,6 +391,23 @@ h3{font-size:18px;font-weight:700}
   .feature-grid{grid-template-columns: 1fr !important;}
   .stats{grid-template-columns: repeat(2, minmax(0,1fr));}
 }
+@media (max-width: 680px){
+  .section.highlight .project.card{
+    grid-template-columns: 1fr;    
+    align-items: start;
+    padding: 16px;
+  }
+  .section.highlight .project.card .thumb{
+    order: -1;                   
+    min-height: 180px;            
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .section.highlight .project-body{
+    text-align: left;            
+  }
+  .section.highlight h2{ margin-bottom: 12px; }
+}
 @media (max-width: 560px){
   .cards.three, .cards.four{grid-template-columns:1fr}
   .news.avatars{grid-template-columns:repeat(2, minmax(0,1fr))}
