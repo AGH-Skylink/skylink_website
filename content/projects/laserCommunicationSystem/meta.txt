@@ -1,6 +1,6 @@
 title: Laser Communication System
 date:
-tags: highlight
+tags:
 status: completed
 links:
 ---

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>AGH SkyLink - Projects</title>
+        <link rel="stylesheet" href="style.css?v=2" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo_skylink.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="logo_skylink.png">
+        <link rel="apple-touch-icon" href="logo_skylink.png">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="container nav">
+                <a class="brand" href="#home">
+                    <span class="brand-text">AGH&nbsp;Skylink</span>
+                </a>
+
+                <nav class="links">
+                    <a href="index.html">Start</a>
+                    <a href="news.html">News</a>
+                    <a href="#recruit">Recruit</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <div class="nav-cta">
+                    <a class="btn ghost" href="index.html">← Go back to main page</a>
+                    <a class="btn primary" href="#join">Join Us</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="container hero-wrap" id="main">
+                <div class="hero-copy">
+                    <h1>AGH Skylink - we connect everything</h1>
+                    <p class="lead">Space and Laser Communication • Microelectronics • Radar</p>
+                    <div class="actions">
+                        <a class="btn primary" href="index.html">← Go back</a>
+                        <a class="btn ghost" href="#join">Join Us</a>
+                    </div>
+                    <div class="quick">
+                        <a class="chip" href="news.html">News</a>
+                        <a class="chip" href="#join">Become a member</a>
+                        <a class="chip" href="#contact">Contact us</a>  
+                        <a class="chip" target="_blank" rel="noopener" href="https://www.linkedin.com/company/agh-skylink/">Follow on LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects" id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <ul class="cards three">
+                    <li class="card proj">
+                        <div class="thumb"></div>
+                        <h3>PROJECT ONE</h3>
+                        <p>DESCRIPTION</p>
+                    </li>
+                    <li class="card proj">
+                        <div class="thumb"></div>
+                        <h3>PROJECT TWO</h3>
+                        <p>DESCRIPTION</p>
+                    </li>
+                    <li class="card proj">
+                        <div class="thumb"></div>
+                        <h3>PROJECT THREE</h3>
+                        <p>DESCRIPTION</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section partners" id="partners">
+            <div class="container two">
+                <div>
+                    <h2>Partners</h2>
+                    <ul class="logos">
+                        <li class="logo">
+                            <img src="./img/logo.png" alt="Logo">
+                        </li>
+                    </ul>
+                </div>
+                <div class="card join" id="join">
+                    <h2>Join us</h2>
+                    <p id="recruit">Recruit open</p>
+                    <a class="btn primary" href="https://forms.office.com/r/MKcszRw5tV">Apply</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" id="contact">
+            <div class="container foot">
+                <div class="brand b">
+                    <span class="dot"></span>
+                    <span class="brand-text">AGH Skylink</span>
+                    <p class="muted">We connect everything</p>
+                    <p class="muted email">E-mail address: <span>skylink@agh.edu.pl</span></p>
+                </div>
+
+                <div class="foot-meta">
+                    <a class="chip" target="_blank" rel="noopener"
+                    href="https://www.instagram.com/aghskylink?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+                    <a class="chip" target="_blank" rel="noopener"
+                    href="https://www.facebook.com/profile.php?id=61572327687853">Facebook</a>
+                    <a class="chip" target="_blank" rel="noopener"
+                    href="https://www.linkedin.com/company/agh-skylink/">LinkedIn</a>
+                    <p class="muted">© 2025 AGH Skylink</p>
+                </div>
+            </div>
+        </footer>
+
+        <script type="module">
+            const DATA_BASE = "./public/data";
+            const CONTENT_BASE = "/content";
+
+            const resolveContent = (p) => {
+                if (!p) return "";
+                if (/^https?:\/\//.test(p)) return p;
+                if (p.startsWith("/")) return p;
+                return `${CONTENT_BASE}/${p}`.replace(/\/{2,}/g, "/");
+            };
+
+            const escapeHTML = (s = "") =>
+            s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+
+            function renderExpandable(escapedText, limit = 160, moreLabel = "Show more", lessLabel = "Show less") {
+                if (!escapedText) return "";
+                if (escapedText.length <= limit) return escapedText;
+                const shortPart = escapedText.slice(0, limit);
+                const restPart  = escapedText.slice(limit);
+                return `
+                    <span class="exp-text" data-collapsed="true">
+                    <span class="exp-short">${shortPart}</span><span class="exp-ellipsis">…</span>
+                    <span class="exp-rest" hidden>${restPart}</span>
+                    <button class="exp-toggle btn" type="button" aria-expanded="false" data-more="${moreLabel}" data-less="${lessLabel}">
+                        ${moreLabel}
+                    </button>
+                    </span>
+                `;
+            }
+
+            document.addEventListener("click", (e) => {
+                const btn = e.target.closest(".exp-toggle");
+                if (!btn) return;
+                const wrap = btn.closest(".exp-text");
+                const rest = wrap.querySelector(".exp-rest");
+                const ell  = wrap.querySelector(".exp-ellipsis");
+                const collapsed = wrap.getAttribute("data-collapsed") === "true";
+                if (collapsed){
+                    rest.hidden = false; ell.hidden = true;
+                    wrap.setAttribute("data-collapsed","false");
+                    btn.setAttribute("aria-expanded","true");
+                    btn.textContent = btn.dataset.less || "Show less";
+                } else {
+                    rest.hidden = true; ell.hidden = false;
+                    wrap.setAttribute("data-collapsed","true");
+                    btn.setAttribute("aria-expanded","false");
+                    btn.textContent = btn.dataset.more || "Show more";
+                }
+            });
+
+            async function getJSON(name){
+                const res = await fetch(`${DATA_BASE}/${name}.json`, { cache: "no-store", headers: { "Accept":"application/json" } });
+                if(!res.ok) throw new Error(`HTTP ${res.status} for ${name}.json`);
+                return res.json();
+            }
+
+            const statusBadge = (status) => {
+                if(!status) return "";
+                const slug = String(status).toLowerCase().replace(/\s+/g,"-");
+                return `<span class="status ${slug}">${escapeHTML(status)}</span>`;
+            };
+
+            const linksChips = (links) => {
+                if(!links) return "";
+                const arr = Array.isArray(links) ? links : String(links).split(/\s*,\s*/);
+                const clean = arr.filter(Boolean);
+                if(!clean.length) return "";
+                return `<p class="proj-links">` + clean.map((url,i) => {
+                    const label = /github\.com/i.test(url) ? "GitHub" : `Link ${i+1}`;
+                    return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+                }).join(" ") + `</p>`;
+            };
+
+            async function renderProjects(){
+                const list = await getJSON("projects");
+
+                const ul = document.querySelector(".section.projects ul.cards");
+                if(!ul) return;
+
+                const items = list.map(p => `
+                    <li class="card proj">
+                    <div class="thumb">
+                        ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title || "")}">` : ""}
+                    </div>
+                    <div class="proj-head">
+                        <h3>${escapeHTML(p.title || "")}</h3>
+                        ${statusBadge(p.status)}
+                    </div>
+                    <p>${renderExpandable(escapeHTML(p.description || ""), 150)}</p>
+                    ${linksChips(p.links)}
+                    </li>
+                `).join("");
+
+                ul.innerHTML = items || `<li class="card proj"><p>No projects yet.</p></li>`;
+            }
+
+            function setupLightbox(){
+                const box  = document.getElementById("lightbox");
+                if(!box) return;
+                const img  = box.querySelector("img");
+                const btn  = box.querySelector(".lightbox-close");
+
+                const open = (src, alt="") => {
+                    img.src = src; img.alt = alt;
+                    box.setAttribute("aria-hidden","false");
+                    document.body.style.overflow = "hidden";
+                };
+                const close = () => {
+                    box.setAttribute("aria-hidden","true");
+                    img.src = ""; img.alt = "";
+                    document.body.style.overflow = "";
+                };
+
+                document.addEventListener("click", (e) => {
+                    const t = e.target;
+                    if (t.matches(".section.projects .thumb img, .section.highlight .thumb img")) {
+                    open(t.currentSrc || t.src, t.alt || "");
+                    return;
+                    }
+                    if (t === box || t === btn) close();
+                });
+
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape" && box.getAttribute("aria-hidden") === "false") close();
+                });
+            }
+
+            (async function init(){
+                try{
+                    await renderProjects();
+                    setupLightbox();
+                }catch(e){
+                    console.error("Render error:", e);
+                }
+            })();
+        </script>
+
+        <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+            <img alt="" />
+            <button class="lightbox-close" aria-label="Close">×</button>
+        </div>
+
+    </body>
+
+</html>

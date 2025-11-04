@@ -1,5 +1,23 @@
 [
   {
+    "slug": "slawosz",
+    "title": "SkyLink selected for Techseed 2025 acceleration program!",
+    "date": "2025-11-04",
+    "author": "From Orbit to AGH – an Inspiring Meeting with Astronaut Dr. Sławosz Uznański-Wiśniewski",
+    "cover": "/content/news/slawosz/cover.jpg",
+    "description": "Today we had the incredible opportunity to take part in a meeting with Dr. Sławosz Uznański-Wiśniewski — Polish astronaut with the European Space Agency (ESA), engineer, and inspiring science communicator.\nThe meeting was part of the Post-Flight Tour, during which Dr. Uznański shares his experiences from the IGNIS mission — including experiments conducted in microgravity and innovative technologies developed through orbital research. 🚀\nDuring the event, we learned about life and work in space, experiments conducted in microgravity, and cutting-edge technologies developed thanks to orbital research. Dr. Uznański also shared his career path and insights into what it takes to become an astronaut 👨‍🚀\nRepresenting our student research group AGH SkyLink were\nAleksander Kopyto, Julia Brąglewicz, and Kacper Sikora. ✨\nThe meeting was truly inspiring — filled with knowledge, passion, and motivation to continue developing the Polish space sector. 🚀\nWe would like to thank Dr. Sławosz Uznański-Wiśniewski for sharing his experience and inspiring the next generation of engineers. 🙌\nHuge thanks also to the organizers for creating a space to discuss the future of Polish space technologies.✨",
+    "path": "/content/news/slawosz/"
+  },
+  {
+    "slug": "techseed2025",
+    "title": "SkyLink selected for Techseed 2025 acceleration program!",
+    "date": "2025-11-03",
+    "author": "",
+    "cover": "/content/news/techseed2025/cover.jpg",
+    "description": "Exciting news from Gdańsk! 🚀\nOur representatives — Aleksander Kopyto, Kacper Sikora, Dobrawa Rumszewicz, and Jakub Uchacz — proudly represented AGH SkyLink and the Faculty of Space Technologies AGH at the launch of the hasztag#Techseed 2025 acceleration program at Inkubator STARTER.\nTechseed supports innovative projects in critical infrastructure security, marine technologies, and sustainability – and we’re thrilled that our project Jastrząb – Drone Detection System was selected among the startups shaping the future of smart and safe infrastructure. 💡\nThe event brought together inspiring teams, mentors, and experts from across the region. We’re excited to continue developing our technology as part of this accelerator! 🙌",
+    "path": "/content/news/techseed2025/"
+  },
+  {
     "slug": "firstFrames",
     "title": "First Frames from Our Satellite Ground Station!",
     "date": "2025-10-03",
