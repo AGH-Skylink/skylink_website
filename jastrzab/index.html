@@ -5,15 +5,15 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>AGH SkyLink - Projects</title>
-        <link rel="stylesheet" href="style.css?v=3" />
+        <title>AGH SkyLink - Jastrząb</title>
+        <link rel="stylesheet" href="style.css?v=1" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" sizes="32x32" href="logo_skylink.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="logo_skylink.png">
-        <link rel="apple-touch-icon" href="logo_skylink.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../logo_skylink.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../logo_skylink.png">
+        <link rel="apple-touch-icon" href="../logo_skylink.png">
     </head>
 
     <body>
@@ -24,10 +24,11 @@
                 </a>
 
                 <nav class="links">
-                    <a href="index.html">Start</a>
-                    <a href="news.html">News</a>
+                    <a href="../index.html">Start</a>
+                    <a href="../news.html">News</a>
                     <a href="#recruit">Recruit</a>
                     <a href="#contact">Contact</a>
+                    <a href="../projects.html">Projects</a>
                 </nav>
 
                 <div class="nav-cta">
@@ -43,11 +44,12 @@
                     <h1>AGH Skylink - we connect everything</h1>
                     <p class="lead">Space and Laser Communication • Microelectronics • Radar</p>
                     <div class="actions">
-                        <a class="btn primary" href="index.html">← Go back</a>
+                        <a class="btn primary" href="../index.html">← Go back</a>
                         <a class="btn ghost" href="#join">Join Us</a>
                     </div>
                     <div class="quick">
-                        <a class="chip" href="news.html">News</a>
+                        <a class="chip" href="../news.html">News</a>
+                        <a class="chip" href="../projects.html">Projects</a>
                         <a class="chip" href="#join">Become a member</a>
                         <a class="chip" href="#contact">Contact us</a>  
                         <a class="chip" target="_blank" rel="noopener" href="https://www.linkedin.com/company/agh-skylink/">Follow on LinkedIn</a>
@@ -57,25 +59,32 @@
         </section>
 
         <section class="section projects" id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <ul class="cards three">
-                    <li class="card proj">
-                        <div class="thumb"></div>
-                        <h3>PROJECT ONE</h3>
-                        <p>DESCRIPTION</p>
-                    </li>
-                    <li class="card proj">
-                        <div class="thumb"></div>
-                        <h3>PROJECT TWO</h3>
-                        <p>DESCRIPTION</p>
-                    </li>
-                    <li class="card proj">
-                        <div class="thumb"></div>
-                        <h3>PROJECT THREE</h3>
-                        <p>DESCRIPTION</p>
-                    </li>
-                </ul>
+            <div class="container card proj">
+                <div class="project-header">
+                    <h2 id="jastrzab">Jastrząb – Drone Detection System</h2>
+                    <span class="status in-development">In Development</span>
+                </div>
+                <div id="jastrzab_img">
+                    <img src="img.jpg" alt="Jastrząb Drone Detection System">
+                </div>
+                <p>We are developing a drone detection system designed to address the growing need for protecting critical infrastructure such as ports, airports, and power lines.<br></br>
+                    Our solution is based on passive radar technology, capable of determining a drone’s direction and velocity without emitting any active signals.
+                    The system is scalable, cost-effective, and can be enhanced with laser-based modules for advanced functionality. The base configuration costs around 1000 PLN, making it significantly more affordable than existing alternatives.
+                    As there are currently no similar accessible systems available in Poland, our goal is to provide an efficient and low-cost detection platform that strengthens airspace safety and supports national infrastructure protection.
+                </p>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <h4>Technical Documentation</h4>
+                        <iframe src="https://docs.google.com/document/d/e/2PACX-1vQr_vNwdOJ_riCtRA2lJ_1KK04hr8zM1x1WW0upIzOptdfwprjkmSlxiSHzafKKl_ytLgL5DvnEbHPW/pub?embedded=true"></iframe>
+                    </div>
+                    <div class="media-item">
+                        <h4>System Animation</h4>
+                        <video controls>
+                            <source src="animation.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -85,7 +94,7 @@
                     <h2>Partners</h2>
                     <ul class="logos">
                         <li class="logo">
-                            <img src="./img/logo.png" alt="Logo">
+                            <img src="../img/logo.png" alt="Logo">
                         </li>
                     </ul>
                 </div>
@@ -119,34 +128,6 @@
         </footer>
 
         <script type="module">
-            const DATA_BASE = "./public/data";
-            const CONTENT_BASE = "/content";
-
-            const resolveContent = (p) => {
-                if (!p) return "";
-                if (/^https?:\/\//.test(p)) return p;
-                if (p.startsWith("/")) return p;
-                return `${CONTENT_BASE}/${p}`.replace(/\/{2,}/g, "/");
-            };
-
-            const escapeHTML = (s = "") =>
-            s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-
-            function renderExpandable(escapedText, limit = 160, moreLabel = "Show more", lessLabel = "Show less") {
-                if (!escapedText) return "";
-                if (escapedText.length <= limit) return escapedText;
-                const shortPart = escapedText.slice(0, limit);
-                const restPart  = escapedText.slice(limit);
-                return `
-                    <span class="exp-text" data-collapsed="true">
-                    <span class="exp-short">${shortPart}</span><span class="exp-ellipsis">…</span>
-                    <span class="exp-rest" hidden>${restPart}</span>
-                    <button class="exp-toggle btn" type="button" aria-expanded="false" data-more="${moreLabel}" data-less="${lessLabel}">
-                        ${moreLabel}
-                    </button>
-                    </span>
-                `;
-            }
 
             document.addEventListener("click", (e) => {
                 const btn = e.target.closest(".exp-toggle");
@@ -167,75 +148,6 @@
                     btn.textContent = btn.dataset.more || "Show more";
                 }
             });
-
-            async function getJSON(name){
-                const res = await fetch(`${DATA_BASE}/${name}.json`, { cache: "no-store", headers: { "Accept":"application/json" } });
-                if(!res.ok) throw new Error(`HTTP ${res.status} for ${name}.json`);
-                return res.json();
-            }
-
-            const statusBadge = (status) => {
-                if(!status) return "";
-                const slug = String(status).toLowerCase().replace(/\s+/g,"-");
-                return `<span class="status ${slug}">${escapeHTML(status)}</span>`;
-            };
-
-            const linksChips = (links) => {
-                if(!links) return "";
-                const arr = Array.isArray(links) ? links : String(links).split(/\s*,\s*/);
-                const clean = arr.filter(Boolean);
-                if(!clean.length) return "";
-                return `<p class="proj-links">` + clean.map((url,i) => {
-                    const label = /github\.com/i.test(url) ? "GitHub" : `Link ${i+1}`;
-                    return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
-                }).join(" ") + `</p>`;
-            };
-
-            function renderLinks(linksString) {
-                const linkArr = (linksString || "").split(/\s*,\s*/).filter(Boolean);
-                if (!linkArr.length) return "";
-                
-                return `<p class="links">` +
-                    linkArr.map((url,i) => {
-                    const label = /github\.com/i.test(url) ? "GitHub" : 
-                                /jastrzab/i.test(url) ? "Jastrząb website" :
-                                `Link ${i+1}`;
-                    return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
-                    }).join(" ") +
-                `</p>`;
-            }
-
-            async function renderProjects(){
-                const list = await getJSON("projects");
-
-                const ul = document.querySelector(".section.projects ul.cards");
-                if(!ul) return;
-
-                const items = list.map(p => {
-                    const statusSlug = (p.status || "").toLowerCase().replace(/\s+/g,"-");
-                    const statusBadge = p.status
-                        ? `<span class="status ${statusSlug}">${escapeHTML(p.status)}</span>`
-                        : "";
-
-                    const linksHTML = renderLinks(p.links);
-
-                    return `
-                        <li class="card proj">
-                        <div class="thumb">
-                            ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title)}">` : ""}
-                        </div>
-                        <div class="proj-head">
-                            <h3>${escapeHTML(p.title)}</h3>
-                            ${statusBadge}
-                        </div>
-                        <p>${renderExpandable(escapeHTML(p.description), 150)}</p>
-                        ${linksHTML}
-                        </li>
-                    `;
-                }).join("");
-
-                ul.innerHTML = items || `<li class="card proj"><p>No projects yet.</p></li>`;
-            }
 
             function setupLightbox(){
                 const box  = document.getElementById("lightbox");
@@ -270,7 +182,6 @@
 
             (async function init(){
                 try{
-                    await renderProjects();
                     setupLightbox();
                 }catch(e){
                     console.error("Render error:", e);

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>AGH SKYLINK - we connect everything</title>
         <meta name="description" content="AGH Skylink - students scientific association. Space and Laser Communication, Microelectronics, Radar.">
-        <link rel="stylesheet" href="style.css?v=11">
+        <link rel="stylesheet" href="style.css?v=14">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,7 +99,7 @@
 
               <div class="news-block" id="news">
                 <h2>News</h2>
-                <ul class="news cards three">
+                <ul class="news">
                   <li>UZUPELNIC</li>
                 </ul>
                 <div class="actions center">
@@ -381,20 +381,39 @@
           `;
         }
 
+        function renderLinks(linksString) {
+          const linkArr = (linksString || "").split(/\s*,\s*/).filter(Boolean);
+          if (!linkArr.length) return "";
+          
+          return `<p class="links">` +
+            linkArr.map((url,i) => {
+              const label = /github\.com/i.test(url) ? "GitHub" : 
+                          /jastrzab/i.test(url) ? "Jastrząb website" :
+                          `Link ${i+1}`;
+              return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+            }).join(" ") +
+          `</p>`;
+        }
+
         async function renderNews(){
           const list = await getJSON("news");
           const ul = document.querySelector("ul.news");
           if(!ul) return;
-          const items = list.slice(0,6).map(n => `
-            <li class="news-item">
-              ${n.cover ? `<img class="news-thumb" src="${resolveContent(n.cover)}" alt="${escapeHTML(n.title)}">` : ""}
-              <div>
-                <strong>${escapeHTML(n.title)}</strong><br>
-                <small>${n.date ? new Date(n.date).toLocaleDateString() : ""}</small>
-                <p>${renderExpandable(escapeHTML(n.description), 120)}</p>
-              </div>
-            </li>
-          `).join("");
+          const items = list.slice(0,6).map(n => {
+            const linksHTML = renderLinks(n.links);
+            return `
+              <li class="news-item">
+                ${n.cover ? `<img class="news-thumb" src="${resolveContent(n.cover)}" alt="${escapeHTML(n.title)}">` : ""}
+                <div>
+                  <strong>${escapeHTML(n.title)}</strong><br>
+                  <small>${n.date ? new Date(n.date).toLocaleDateString() : ""}</small>
+                  <p>${renderExpandable(escapeHTML(n.description), 120)}</p>
+                  ${linksHTML}
+                </div>
+              </li>
+            `;
+          }).join("");
+
           ul.innerHTML = items || "<li>Brak aktualności — wkrótce coś wrzucimy.</li>";
         }
 
@@ -403,39 +422,31 @@
           const ul = document.querySelector(".section.projects ul.cards");
           if(!ul) return;
 
-          const items = list.slice(0, 9).map(p => {
-            const statusSlug = (p.status || "").toLowerCase().replace(/\s+/g,"-");
-            const statusBadge = p.status
-              ? `<span class="status ${statusSlug}">${escapeHTML(p.status)}</span>`
-              : "";
+        const items = list.slice(0, 9).map(p => {
+          const statusSlug = (p.status || "").toLowerCase().replace(/\s+/g,"-");
+          const statusBadge = p.status
+            ? `<span class="status ${statusSlug}">${escapeHTML(p.status)}</span>`
+            : "";
 
-            const linkArr = (p.links || "").split(/\s*,\s*/).filter(Boolean);
-            const linksHTML = linkArr.length
-              ? `<p class="proj-links">` +
-                  linkArr.map((url,i) => {
-                    const label = /github\.com/i.test(url) ? "GitHub" : `Link ${i+1}`;
-                    return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
-                  }).join(" ") +
-                `</p>`
-              : "";
+          const linksHTML = renderLinks(p.links);
 
-            return `
-              <li class="card proj">
-                <div class="thumb">
-                  ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title)}">` : ""}
-                </div>
-                <div class="proj-head">
-                  <h3>${escapeHTML(p.title)}</h3>
-                  ${statusBadge}
-                </div>
-                <p>${renderExpandable(escapeHTML(p.description), 150)}</p>
-                ${linksHTML}
-              </li>
-            `;
-          }).join("");
+          return `
+            <li class="card proj">
+              <div class="thumb">
+                ${p.cover ? `<img src="${resolveContent(p.cover)}" alt="${escapeHTML(p.title)}">` : ""}
+              </div>
+              <div class="proj-head">
+                <h3>${escapeHTML(p.title)}</h3>
+                ${statusBadge}
+              </div>
+              <p>${renderExpandable(escapeHTML(p.description), 150)}</p>
+              ${linksHTML}
+            </li>
+          `;
+        }).join("");
 
-          ul.innerHTML = items;
-        }
+        ul.innerHTML = items;
+      }
 
         async function renderHighlighted(){
           const list = await getJSON("projects");

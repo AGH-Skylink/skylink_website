@@ -1,6 +1,7 @@
 title: SkyLink selected for Techseed 2025 acceleration program!
 date: 2025-11-03
 author: 
+links: https://skylink.agh.edu.pl/jastrzab/
 ---
 Exciting news from Gdańsk! 🚀
 Our representatives — Aleksander Kopyto, Kacper Sikora, Dobrawa Rumszewicz, and Jakub Uchacz — proudly represented AGH SkyLink and the Faculty of Space Technologies AGH at the launch of the hasztag#Techseed 2025 acceleration program at Inkubator STARTER.

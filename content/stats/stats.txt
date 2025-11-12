@@ -1,4 +1,4 @@
-projects_total: 4
+projects_total: 5
 cities_connected: 3
 team_members: ~30
 avg_link_latency_ms: 2.8

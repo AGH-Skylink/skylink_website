@@ -2,7 +2,7 @@ title: Drone Detection System
 date:
 tags: highlight
 status: in development
-links:
+links: https://skylink.agh.edu.pl/jastrzab/
 ---
 We are developing a drone detection system designed to address the growing need for protecting critical infrastructure such as ports, airports, and power lines.
 Our solution is based on passive radar technology, capable of determining a drone’s direction and velocity without emitting any active signals.

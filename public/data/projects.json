@@ -7,8 +7,8 @@
       "highlight"
     ],
     "status": "in development",
-    "links": "",
-    "cover": null,
+    "links": "https://skylink.agh.edu.pl/jastrzab/",
+    "cover": "/content/projects/droneDetectionSystem/cover.jpg",
     "gallery": [],
     "description": "We are developing a drone detection system designed to address the growing need for protecting critical infrastructure such as ports, airports, and power lines.\nOur solution is based on passive radar technology, capable of determining a drone’s direction and velocity without emitting any active signals.\nThe system is scalable, cost-effective, and can be enhanced with laser-based modules for advanced functionality. The base configuration costs around 1000 PLN, making it significantly more affordable than existing alternatives.\nAs there are currently no similar accessible systems available in Poland, our goal is to provide an efficient and low-cost detection platform that strengthens airspace safety and supports national infrastructure protection.",
     "path": "/content/projects/droneDetectionSystem/"

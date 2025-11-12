@@ -4,6 +4,7 @@
     "title": "SkyLink selected for Techseed 2025 acceleration program!",
     "date": "2025-11-04",
     "author": "From Orbit to AGH – an Inspiring Meeting with Astronaut Dr. Sławosz Uznański-Wiśniewski",
+    "links": null,
     "cover": "/content/news/slawosz/cover.jpg",
     "description": "Today we had the incredible opportunity to take part in a meeting with Dr. Sławosz Uznański-Wiśniewski — Polish astronaut with the European Space Agency (ESA), engineer, and inspiring science communicator.\nThe meeting was part of the Post-Flight Tour, during which Dr. Uznański shares his experiences from the IGNIS mission — including experiments conducted in microgravity and innovative technologies developed through orbital research. 🚀\nDuring the event, we learned about life and work in space, experiments conducted in microgravity, and cutting-edge technologies developed thanks to orbital research. Dr. Uznański also shared his career path and insights into what it takes to become an astronaut 👨‍🚀\nRepresenting our student research group AGH SkyLink were\nAleksander Kopyto, Julia Brąglewicz, and Kacper Sikora. ✨\nThe meeting was truly inspiring — filled with knowledge, passion, and motivation to continue developing the Polish space sector. 🚀\nWe would like to thank Dr. Sławosz Uznański-Wiśniewski for sharing his experience and inspiring the next generation of engineers. 🙌\nHuge thanks also to the organizers for creating a space to discuss the future of Polish space technologies.✨",
     "path": "/content/news/slawosz/"
@@ -13,6 +14,7 @@
     "title": "SkyLink selected for Techseed 2025 acceleration program!",
     "date": "2025-11-03",
     "author": "",
+    "links": "https://skylink.agh.edu.pl/jastrzab/",
     "cover": "/content/news/techseed2025/cover.jpg",
     "description": "Exciting news from Gdańsk! 🚀\nOur representatives — Aleksander Kopyto, Kacper Sikora, Dobrawa Rumszewicz, and Jakub Uchacz — proudly represented AGH SkyLink and the Faculty of Space Technologies AGH at the launch of the hasztag#Techseed 2025 acceleration program at Inkubator STARTER.\nTechseed supports innovative projects in critical infrastructure security, marine technologies, and sustainability – and we’re thrilled that our project Jastrząb – Drone Detection System was selected among the startups shaping the future of smart and safe infrastructure. 💡\nThe event brought together inspiring teams, mentors, and experts from across the region. We’re excited to continue developing our technology as part of this accelerator! 🙌",
     "path": "/content/news/techseed2025/"
@@ -22,6 +24,7 @@
     "title": "First Frames from Our Satellite Ground Station!",
     "date": "2025-10-03",
     "author": "",
+    "links": null,
     "cover": "/content/news/firstFrames/cover.png",
     "description": "Our ground station, operating within the TinyGS network, has successfully received its first frames from the Tianqi-16 satellite 🚀.\nCurrently, it is capable of receiving LoRa transmissions in the 433 MHz band, as well as signals from stratospheric balloons, including projects such as WTK and AATC.\nGreat work on the antenna and project idea by Jakub Uchacz and Magdalena Nowak🙌",
     "path": "/content/news/firstFrames/"
@@ -31,6 +34,7 @@
     "title": "SkyLink in the Himalayas!",
     "date": "2025-08-14",
     "author": "",
+    "links": null,
     "cover": "/content/news/himalayas/cover.jpg",
     "description": "Our president, Aleksander Kopyto, took part in the international Spaceward Bound India Program expedition in Ladakh 🇮🇳. The mission was carried out at Tso Kar Lake, one of the world’s highest-altitude salt lakes, whose environment resembles Mars.\nDuring the fieldwork, our Ground-Penetrating Radar project was successfully deployed in the Himalayas, proving its reliability in extreme conditions and delivering valuable scientific results. This is a huge milestone for SkyLink and shows that our solutions can perform in real-world exploration missions!",
     "path": "/content/news/himalayas/"
@@ -40,6 +44,7 @@
     "title": "ARISS SSTV Certificate",
     "date": "2025-07-25",
     "author": "",
+    "links": null,
     "cover": "/content/news/arissSstvCertificate/cover.jpg",
     "description": "The AGH Skylink team successfully received SSTV transmissions from the International Space Station (ISS) and was awarded an official certificate by ARISS (Amateur Radio on the International Space Station). The broadcast commemorated the 50th anniversary of the Apollo-Soyuz mission and the 40th anniversary of the first two-way SSTV communication during the STS-51F mission. The images were transmitted from the Russian segment of the ISS using an amateur radio system. We thank the ARISS organizers and mentors for this unique opportunity.",
     "path": "/content/news/arissSstvCertificate/"
@@ -49,6 +54,7 @@
     "title": "Event with astronaut Sławosz Uznański-Wiśniewski",
     "date": "2025-07-22",
     "author": "",
+    "links": null,
     "cover": "/content/news/eventWithSlawosz/cover.jpg",
     "description": "AGH Skylink was invited to a special communication event with astronaut Sławosz Uznański-Wiśniewski at the Copernicus Science Centre. Our team was represented by Magdalena Nowak, 민병준, and Olek Kopyto. We conducted workshops on how CB radios work, where visitors could see their voices visualized on an oscilloscope—before and after being transformed into a radio wave. Guests also learned the basics of electronic measurements, SDR receivers, and radio modulation techniques. The youngest participants had a blast, but curious adults joined in as well!",
     "path": "/content/news/eventWithSlawosz/"
@@ -58,6 +64,7 @@
     "title": "Ground-Penetrating Radar Award",
     "date": "2025-06-03",
     "author": "",
+    "links": null,
     "cover": "/content/news/groundRadarAward/cover.jpg",
     "description": "Our Ground-Penetrating Radar (GPR) project, designed to be mounted on a drone developed in collaboration with the Production Engineering and Energy Science Club at the University of Agriculture, won 3rd place at the URK Student Research Club Session! A great example of the power of interdisciplinary teamwork.",
     "path": "/content/news/groundRadarAward/"
@@ -67,6 +74,7 @@
     "title": "Space Resources Conference 2025",
     "date": "2025-05-24",
     "author": "",
+    "links": null,
     "cover": "/content/news/conference2025/cover.jpg",
     "description": "We’ve just wrapped up an inspiring experience at the Space Resources Conference (May 21–23), where we presented our project posters and connected with experts from around the world! A highlight of the event was meeting Bernard Foing, former Chief Scientist of ESA, who praised our ideas and congratulated us on the direction our student group is taking.\nPoster authors:\n- Krzysztof Rosiński, Michał Mikołajczyk, Kacper Sikora – Free Space Optical Laser Transceiver\n- Aleksander Kopyto, Sylwester Ślusarczyk, Jakub Uchacz – Development of a Ground Penetrating Radar for a Himalayan Survey Mission\n- Kacper Wojtowicz – Chronaflow: an app for subjective time perception research in Analog Astronaut Missions\nAGH SKYLINK is gaining momentum – and this is just the beginning of our cosmic journey! 🌌",
     "path": "/content/news/conference2025/"

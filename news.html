@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>AGH SkyLink - News</title>
-        <link rel="stylesheet" href="style.css?v=2" />
+        <link rel="stylesheet" href="style.css?v=4" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@
             <div class="container">
                 <div class="news-block" id="news">
                 <h2>News</h2>
-                <ul class="news cards three"></ul>
+                <ul class="news"></ul>
                 </div>
             </div>
         </section>
@@ -161,27 +161,82 @@
                 return res.json();
             }
 
+            function renderLinks(linksString) {
+            const linkArr = (linksString || "").split(/\s*,\s*/).filter(Boolean);
+            if (!linkArr.length) return "";
+            
+            return `<p class="links">` +
+                linkArr.map((url,i) => {
+                const label = /github\.com/i.test(url) ? "GitHub" : 
+                            /jastrzab/i.test(url) ? "Jastrząb website" :
+                            `Link ${i+1}`;
+                return `<a class="chip" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+                }).join(" ") +
+            `</p>`;
+            }
+
             async function renderAllNews(){
                 const list = await getJSON("news");
                 list.sort((a,b) => new Date(b.date||0) - new Date(a.date||0));
                 const ul = document.querySelector(".news-block ul.cards");
                 if(!ul) return;
 
-                const items = list.map(n => `
+                const items = list.map(n =>  {
+                    const linksHTML = renderLinks(n.links);
+                    return `
                     <li class="news-item">
-                    ${n.cover ? `<img class="news-thumb" src="${resolveContent(n.cover)}" alt="${escapeHTML(n.title)}">` : ""}
-                    <div>
+                        ${n.cover ? `<img class="news-thumb" src="${resolveContent(n.cover)}" alt="${escapeHTML(n.title)}">` : ""}
+                        <div>
                         <strong>${escapeHTML(n.title)}</strong><br>
                         <small>${n.date ? new Date(n.date).toLocaleDateString() : ""}</small>
                         <p>${renderExpandable(escapeHTML(n.description), 120)}</p>
-                    </div>
+                        ${linksHTML}
+                        </div>
                     </li>
-                `).join("");
+                    `;
+                }).join("");
 
                 ul.innerHTML = items || `<li class="card news"><p>No news yet.</p></li>`;
             }
 
-            renderAllNews().catch(console.error);
+            function setupLightbox(){
+                const box  = document.getElementById("lightbox");
+                const img  = box.querySelector("img");
+                const btn  = box.querySelector(".lightbox-close");
+
+                const open = (src, alt="") => {
+                    img.src = src; img.alt = alt;
+                    box.setAttribute("aria-hidden","false");
+                    document.body.style.overflow = "hidden"; 
+                };
+                const close = () => {
+                    box.setAttribute("aria-hidden","true");
+                    img.src = ""; img.alt = "";
+                    document.body.style.overflow = "";
+                };
+                document.addEventListener("click", (e) => {
+                    const t = e.target;
+                    if (t.matches(".news-thumb, .section.projects .thumb img, .section.highlight .thumb img")) {
+                    open(t.currentSrc || t.src, t.alt || "");
+                    return;
+                    }
+                    if (t === box || t === btn) close();
+                });
+
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape" && box.getAttribute("aria-hidden") === "false") close();
+                });
+            }
+
+
+            (async function init(){
+                try{
+                    await renderAllNews(),
+                    setupLightbox(); 
+                }catch(e){
+                    console.error("Render error:", e);
+                }
+                })();
         </script>
 
 

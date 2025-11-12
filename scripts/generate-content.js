@@ -144,6 +144,7 @@ async function collectNews() {
       title: meta.title ?? slug,
       date: meta.date ?? null,
       author: meta.author ?? "Skylink",
+      links: meta.links ?? null,
       cover,
       description: meta.description ?? "",
       path: `/content/news/${slug}/`
