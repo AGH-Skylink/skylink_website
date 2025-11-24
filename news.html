@@ -178,7 +178,7 @@
             async function renderAllNews(){
                 const list = await getJSON("news");
                 list.sort((a,b) => new Date(b.date||0) - new Date(a.date||0));
-                const ul = document.querySelector(".news-block ul.cards");
+                const ul = document.querySelector(".news-block ul.news");
                 if(!ul) return;
 
                 const items = list.map(n =>  {
