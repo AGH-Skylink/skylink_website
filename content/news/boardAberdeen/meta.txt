@@ -1,0 +1,7 @@
+title: International Collaboration in Deep-Space Exploration – Proud Moment for Our Team!
+date: 2025-11-19
+author:
+---
+We’re excited to share a highlight from our student research group:  has recently developed a dedicated electronics board for the University of Aberdeen as part of our ongoing international cooperation.
+The board is designed for an underwater exploration drone, a platform intended to simulate missions to subsurface oceans on worlds like Europa. Its purpose is to enable reliable communication between onboard sensors and the drone’s main control unit — a critical component for exploring extreme aquatic environments.
+🚀 Collaboration, curiosity, and engineering — that’s what drives us forward.
